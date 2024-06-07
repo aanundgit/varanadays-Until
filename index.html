@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Until Event Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        .container {
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            width: 90%;
+        }
+        button {
+            background-color: #FF9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #E65100;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Days Until Event Calculator</h2>
+        <input type="date" id="eventDateInput" placeholder="Select date">
+        <button onclick="calculateDaysUntil()">Calculate Days</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateDaysUntil() {
+            var today = new Date();
+            var eventDate = new Date(document.getElementById('eventDateInput').value);
+            var timeDiff = eventDate - today;
+            var daysUntil = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+            document.getElementById('result').innerText = "Days Until Event: " + daysUntil;
+        }
+    </script>
+</body>
+</html>
