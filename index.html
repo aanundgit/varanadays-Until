@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaranaDays</title>
-    <style>
-        body {
-            font-family: "Lucida Console", Courier, monospace;;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #eee;
-        }
-        .container {
-            background: #eee;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 300px;
-        }
-        input, button {
-            font-size: 16px;
-            padding: 10px;
-            margin: 10px;
-            border: 2px solid #eee;
-            border-radius: 4px;
-            width: 90%;
-        }
-        button {
-            background-color: #444;
-            color: #eee;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.4s ease;
-        }
-        button:hover {
-            background-color: #667583;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #667583;
-        }
 
-        
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaranaDays</title>
+  <style>
+    body {
+      font-family: "Lucida Console", Courier, monospace;
+      ;
+      display: flex;
+      justify-content: center;
+      /* Centering container horizontally */
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #eee;
+    }
+
+    .container {
+      background: #eee;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    input,
+    button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid #eee;
+      border-radius: 4px;
+      width: 90%;
+    }
+
+    button {
+      background-color: #444;
+      color: #eee;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+    }
+
+    button:hover {
+      background-color: #667583;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #667583;
+    }
+
+
     * {
       margin: 0;
       padding: 0;
@@ -55,8 +64,8 @@
 
     body {
       /* display flex center */
-      display:  flex;
-      justify-content: right;
+      display: flex;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
       background-color: #eee;
@@ -101,46 +110,47 @@
       font-size: 4em;
       color: #444;
     }
-  
-    </style>
+  </style>
 </head>
+
 <body>
 
-    
-    <div class="container">
-        <h2>Days Until</h2>
-        <div style="padding-top: 20px;"> </div>
-        <div style="padding-bottom: 20px;"> </div>
-        <div style="float:center ;margin-right:auto;" id="drop">
-          <!---- <input type="datetime-local" id="todaydate" enabled name="todaydate" name="fname"> <br><br> -->
-           <!-- https://ionic.io/ionicons -->
-           <!-- <ion-icon name="logo-Microsoft"></ion-icon> -->
-          <ion-icon name="earth-outline"></ion-icon> 
-      </div>
-         
-        <input type="date" id="eventDateInput" placeholder="Select date">
-        
-        <button onclick="calculateDaysUntil()">Calculate Days</button>
-        <p id="result"></p>
-        
-       
+
+  <div class="container">
+    <h2>Days Until</h2>
+    <div style="padding-top: 20px;"> </div>
+    <div style="padding-bottom: 20px;"> </div>
+    <div style="float:center" id="drop">
+      <!---- <input type="datetime-local" id="todaydate" enabled name="todaydate" name="fname"> <br><br> -->
+      <!-- https://ionic.io/ionicons -->
+      <!-- <ion-icon name="logo-Microsoft"></ion-icon> -->
+      <ion-icon name="earth-outline"></ion-icon>
     </div>
 
-     
-    <script> document.getElementById("todaydate").value = new Date().toLocaleDateString(); </script>
+    <input type="date" id="eventDateInput" placeholder="Select date">
+
+    <button onclick="calculateDaysUntil()">Calculate Days</button>
+    <p id="result"></p>
+
+
+  </div>
+
+
+  <script> document.getElementById("todaydate").value = new Date().toLocaleDateString(); </script>
   <script src="script.js"></script>
   <!-- This is where the JavaScript code that modifies the date and time element is located -->
 
-    <script>
-        function calculateDaysUntil() {
-            var today = new Date();
-            var eventDate = new Date(document.getElementById('eventDateInput').value);
-            var timeDiff = eventDate - today;
-            var daysUntil = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-            document.getElementById('result').innerText = "Days Until Event: " + daysUntil;
-        }
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script>
+    function calculateDaysUntil() {
+      var today = new Date();
+      var eventDate = new Date(document.getElementById('eventDateInput').value);
+      var timeDiff = eventDate - today;
+      var daysUntil = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      document.getElementById('result').innerText = "Days Until Event: " + daysUntil;
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
