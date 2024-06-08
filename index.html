@@ -9,7 +9,7 @@
     body {
       font-family: "Lucida Console", Courier, monospace;
       ;
-      display: flex;
+      display: flexbox;
       justify-content: center;
       /* Centering container horizontally */
       align-items: center;
@@ -120,7 +120,7 @@
     <h2>Days Until</h2>
     <div style="padding-top: 20px;"> </div>
     <div style="padding-bottom: 20px;"> </div>
-    <div style="float:center" id="drop">
+    <div id="drop">
       <!---- <input type="datetime-local" id="todaydate" enabled name="todaydate" name="fname"> <br><br> -->
       <!-- https://ionic.io/ionicons -->
       <!-- <ion-icon name="logo-Microsoft"></ion-icon> -->
@@ -146,7 +146,7 @@
       var eventDate = new Date(document.getElementById('eventDateInput').value);
       var timeDiff = eventDate - today;
       var daysUntil = Math.ceil(timeDiff / (1000 * 3600 * 24));
-      document.getElementById('result').innerText = "Days Until Event: " + daysUntil;
+      document.getElementById('result').innerText = "Days: " + daysUntil;
     }
   </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
